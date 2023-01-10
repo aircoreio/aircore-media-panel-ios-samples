@@ -20,8 +20,17 @@ class ViewController: UIViewController {
 
         view.backgroundColor = .black
 
+        let label = UILabel(frame: view.bounds)
+        label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        label.textAlignment = .center
+        label.font = .preferredFont(forTextStyle: .footnote)
+        label.textColor = .white
+        label.text = "AircoreMediaPanel version \(Client.frameworkVersion)"
+        view.addSubview(label)
+
         //For information and best practices on creating and using a Publishable API Key, please refer to docs (https://docs.aircore.io/key-concepts#apps-and-api-keys).
-        let publishableKey = "INSERT_PUBLISHABLE_API_KEY_FROM_DEVELOPER_DASHBOARD"
+        guard let publishableKey = Bundle.main.object(forInfoDictionaryKey: "PublishableAPIKey") as? String
+            else { fatalError("publishableKey not found") }
         //An unique id that represents you user
         let userID = UUID.init().uuidString
         //A name that represents you user that is visible on the MediaPanel

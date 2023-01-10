@@ -14,10 +14,8 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                Text("Hello, world!")
+                Text("AircoreMediaPanel version \(Client.frameworkVersion)")
+                    .font(.footnote)
             }
             .padding()
 

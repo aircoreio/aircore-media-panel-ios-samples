@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00DCDC692906D3A300F85EB8 /* AircoreMediaPanel in Frameworks */ = {isa = PBXBuildFile; productRef = 00DCDC682906D3A300F85EB8 /* AircoreMediaPanel */; };
+		5B3A6EDE290C3E62003DA2EC /* AircoreMediaPanel in Frameworks */ = {isa = PBXBuildFile; productRef = 5B3A6EDD290C3E62003DA2EC /* AircoreMediaPanel */; };
 		5BA1F01E2903350B00FAD79E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1F01D2903350B00FAD79E /* AppDelegate.swift */; };
 		5BA1F0202903350B00FAD79E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1F01F2903350B00FAD79E /* SceneDelegate.swift */; };
 		5BA1F0222903350B00FAD79E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1F0212903350B00FAD79E /* ViewController.swift */; };
@@ -32,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00DCDC692906D3A300F85EB8 /* AircoreMediaPanel in Frameworks */,
+				5B3A6EDE290C3E62003DA2EC /* AircoreMediaPanel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 			);
 			name = "MediaPanel-UIKit-Swift";
 			packageProductDependencies = (
-				00DCDC682906D3A300F85EB8 /* AircoreMediaPanel */,
+				5B3A6EDD290C3E62003DA2EC /* AircoreMediaPanel */,
 			);
 			productName = "MediaPanel-UIKit-Swift";
 			productReference = 5BA1F01A2903350B00FAD79E /* MediaPanel-UIKit-Swift.app */;
@@ -117,7 +117,7 @@
 			);
 			mainGroup = 5BA1F0112903350B00FAD79E;
 			packageReferences = (
-				00DCDC672906D3A300F85EB8 /* XCRemoteSwiftPackageReference "aircore-media-panel-ios" */,
+				5B3A6EDC290C3E62003DA2EC /* XCRemoteSwiftPackageReference "aircore-media-panel-ios" */,
 			);
 			productRefGroup = 5BA1F01B2903350B00FAD79E /* Products */;
 			projectDirPath = "";
@@ -209,6 +209,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -270,6 +271,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -296,8 +298,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MediaPanel-UIKit-Swift/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Swift Sample";
@@ -312,7 +314,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.airtime.MediaPanel-UIKit-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -328,8 +329,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MediaPanel-UIKit-Swift/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Swift Sample";
@@ -344,7 +345,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.airtime.MediaPanel-UIKit-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -378,20 +378,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		00DCDC672906D3A300F85EB8 /* XCRemoteSwiftPackageReference "aircore-media-panel-ios" */ = {
+		5B3A6EDC290C3E62003DA2EC /* XCRemoteSwiftPackageReference "aircore-media-panel-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/aircoreio/aircore-media-panel-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.1;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		00DCDC682906D3A300F85EB8 /* AircoreMediaPanel */ = {
+		5B3A6EDD290C3E62003DA2EC /* AircoreMediaPanel */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 00DCDC672906D3A300F85EB8 /* XCRemoteSwiftPackageReference "aircore-media-panel-ios" */;
+			package = 5B3A6EDC290C3E62003DA2EC /* XCRemoteSwiftPackageReference "aircore-media-panel-ios" */;
 			productName = AircoreMediaPanel;
 		};
 /* End XCSwiftPackageProductDependency section */

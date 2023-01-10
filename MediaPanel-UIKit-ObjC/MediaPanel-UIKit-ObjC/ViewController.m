@@ -8,8 +8,6 @@
 @import AircoreMediaPanel;
 #import "ViewController.h"
 
-///For information and best practices on creating and using a Publishable API Key, please refer to docs (https://docs.aircore.io/key-concepts#apps-and-api-keys).
-NSString *const kPublishableKey = @"INSERT_PUBLISHABLE_API_KEY_FROM_DEVELOPER_DASHBOARD";
 NSString *const kChannelID = @"sample-app";
 NSString *const kPanelTitle = @"Objective-C Panel";
 
@@ -25,12 +23,23 @@ NSString *const kPanelTitle = @"Objective-C Panel";
 
     self.view.backgroundColor = [UIColor blackColor];
 
+    UILabel *label = [[UILabel alloc] initWithFrame:self.view.bounds];
+    label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
+    label.textColor = [UIColor whiteColor];
+    label.text = [NSString stringWithFormat:@"AircoreMediaPanel version %@", AIRClient.frameworkVersion];
+    [self.view addSubview:label];
+
     NSString *userID = [NSUUID UUID].UUIDString;
     NSString *userName = [NSString stringWithFormat:@"User %@", [userID substringToIndex:5]];
     NSString *avatarUrl = [NSString stringWithFormat:@"https://i.pravatar.cc/300?u=%@", userID];
 
+    // For information and best practices on creating and using a Publishable API Key, please refer to docs (https://docs.aircore.io/key-concepts#apps-and-api-keys).
+    NSString *publishableKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"PublishableAPIKey"];
+
     // Option 1 : Use a Publishable API Key directly from the developer console
-    self.client = [AIRClient createWithPublishableKey:kPublishableKey userID:userID];
+    self.client = [AIRClient createWithPublishableKey:publishableKey userID:userID];
 
     // Option 2 :Use a session auth token provided by your server by communication with the Aircores provisioning service using the Secret API key
     // self.client = [AIRClient createWithAuthToken:authToken userID:userID];
@@ -74,7 +83,14 @@ NSString *const kPanelTitle = @"Objective-C Panel";
                                                                       emptyCallTitle:@"No one is here"
                                                                    emptyCallSubtitle:@"Tap below to be the first"
                                                                   channelIsFullLabel:@"Channel is full"
-                                                                   genericErrorLabel:@"Unknown Error"];
+                                                                   genericErrorLabel:@"Unknown Error"
+                                                              speakerLimitModalTitle:@"Speaker Limit Reached"
+                                                           speakerLimitModalSubtitle:@"The number of speakers supported is currently at capacity. Try again when a speaker leaves"
+                                                      speakerLimitModalDismissButton:@"OK"
+                                                   noMicrophonePermissionsModalTitle:@"Enable Microphone"
+                                                noMicrophonePermissionsModalSubtitle:@"Allow access to your microphone in settings before you can use this feature."
+                                           noMicrophonePermissionsModalDismissButton:@"OK"
+                                      noMicrophonePermissionsModalGoToSettingsButton:@"Go to Settings"];
 
     AIRMediaPanelCollapsedStateOptions *collapsedOptions = [[AIRMediaPanelCollapsedStateOptions alloc] initWithMaxAvatars:4
                                                                                                                panelTitle:@"Collapsed Title"
@@ -92,6 +108,7 @@ NSString *const kPanelTitle = @"Objective-C Panel";
     return [[AIRMediaPanelConfiguration alloc] initWithPanelTitle:@"My Panel Title"
                                                     panelSubtitle:@"My Panel Subtitle"
                                              showMicrophoneButton:YES
+                                             autoPublishMicOnJoin:NO
                                                           strings:strings
                                             collapsedStateOptions:collapsedOptions
                                              expandedStateOptions:expandedOptions];
@@ -117,7 +134,9 @@ NSString *const kPanelTitle = @"Objective-C Panel";
                                                                                   leaveCallIcon:[UIImage new]
                                                                                  micEnabledIcon:[UIImage new]
                                                                                 micDisabledIcon:[UIImage new]
-                                                                                   collapseIcon:[UIImage new]]];
+                                                                                   collapseIcon:[UIImage new]
+                                                                                       infoIcon:[UIImage new]
+                                                                             micPermissionsIcon:[UIImage new]]];
 }
 
 @end
