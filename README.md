@@ -1,5 +1,5 @@
 ### MediaPanel SDK iOS Samples
-The samples in this repository demonstrate how to use the Aircore MediaPanel SDK.  For more information, check out the [getting started guide](https://docs.aircore.io/getting-started/mediapanel-ios-getting-started) or the [API reference](https://docs.aircore.io/ios/mediapanel/api-reference)
+The samples in this repository demonstrate how to use the Aircore MediaPanel SDK.  For more information, check out the [getting started guide](https://docs.aircore.io/getting-started/sync-ios-quickstart) or the [API reference](https://docs.aircore.io/ios/mediapanel/api-reference/aircoremediapanel).
 
 #### [SwiftUI Sample](https://github.com/aircoreio/aircore-media-panel-ios-samples/tree/main/MediaPanel-SwiftUI)
 #### [Swift Sample](https://github.com/aircoreio/aircore-media-panel-ios-samples/tree/main/MediaPanel-UIKit-Swift)
